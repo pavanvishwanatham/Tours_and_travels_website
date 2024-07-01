@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Booking Form HTML Template</title>
+
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<style>
+		/* Add shadow to input elements */
+		input.form-control {
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+
+	
+<script>
+	function h() {
+	  var name = document.getElementById("name").value;
+	  var age = document.getElementById("age").value;
+	  var number = document.getElementById("number").value;
+	  var email = document.getElementById("email").value;
+  
+	  if (name === "" || age === "" || number === "" || email === "") {
+		alert("Please fill in all fields.");
+		return false;
+	  }
+  
+	  if (isNaN(age) || age < 0) {
+		alert("Please enter a valid age.");
+		return false;
+	  }
+  
+	  if (isNaN(number) || number.length !== 10) {
+		alert("Please enter a valid phone number.");
+		return false;
+	  }
+  
+	  if (!validateEmail(email)) {
+		alert("Please enter a valid email address.");
+		return false;
+	  }
+	}
+  
+	function validateEmail(email) {
+	  // Email validation regex pattern
+	  var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	  return pattern.test(email);
+	}
+  </script>
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form action="flights.html" onsubmit="return h()">
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Passenger Name</span>
+									<input type="text" class="form-control" placeholder="Enter Name" id="name">
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Enter Age</span>
+									<input type="text" class="form-control" placeholder="Enter Age" id="age">
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Phone Number</span>
+									<input type="number" class="form-control" placeholder="Enter Phone Number" id="number">
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Email</span>
+									<input type="email" class="form-control" placeholder="Enter emailid" id="email">
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-checkbox">
+									<label for="roundtrip">
+										<input type="radio" id="roundtrip" name="flight-type">
+										<span></span>Roundtrip
+									</label>
+									<label for="one-way">
+										<input type="radio" id="one-way" name="flight-type">
+										<span></span>One way
+									</label>
+									<label for="multi-city">
+										<input type="radio" id="multi-city" name="flight-type">
+										<span></span>Multi-City
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flying from</span>
+										<input class="form-control" type="text" placeholder="City or airport">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flyning to</span>
+										<input class="form-control" type="text" placeholder="City or airport">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Returning</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Adults (18+)</span>
+										<select class="form-control">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Children (0-17)</span>
+										<select class="form-control">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Travel class</span>
+										<select class="form-control">
+											<option>Economy class</option>
+											<option>Business class</option>
+											<option>First class</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-btn">
+										<input type="submit" class="submit-btn">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
